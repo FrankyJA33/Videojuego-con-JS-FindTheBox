@@ -1,0 +1,266 @@
+body {
+    background-color: #1c2a44;
+    color: #aac5c6;
+    font-family: 'Press Start 2P', cursive;
+    margin: 0;
+    padding: 0;
+    color: rgba(2, 228, 231, 0.8);
+    overflow-x: hidden;
+}
+
+.game-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    max-width: 500px;
+    justify-content: center;
+}
+
+.container h1 {
+    font-size: 25px;
+    font-weight: 400;
+    padding-bottom: 5%;
+}
+
+canvas {
+    border-radius: 5px;
+    box-shadow: 35px 35px 70px #152033, 0 0 5px #aac5c6, -35px -35px 70px #233555;
+    border: 0.2vw solid rgba(2,228,231,0.8);
+    background-color: #344056;
+}
+
+/* Botones */
+.btns {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 22px 0 auto;
+    width: 100%;
+}
+
+button {
+    /* Variables */
+    --button_radius: 0.75em;
+    --button_color: #aac5c6;
+    --button_outline_color: rgba(2,228,231,0.8);
+    font-size: 17px;
+    font-weight: bold;
+    border: none;
+    border-radius: var(--button_radius);
+    background: var(--button_outline_color);
+    margin: 15px 0 5px 5px;
+    box-shadow: 35px 35px 70px #152033, 0 0 5px #aac5c6, -35px -35px 70px #233555;
+    border: 0.2vw solid rgba(2,228,231,0.8);
+    background-color: #344056;
+}
+
+.buttonPress {
+    display: block;
+    box-sizing: border-box;
+    border: 2px solid var(--button_outline_color);
+    border-radius: var(--button_radius);
+    padding: 1em 2em;
+    background: var(--button_color);
+    color: var(--button_outline_color);
+    transform: translateY(-0.2em);
+    transition: transform 0.1s ease;   
+}
+
+button:hover .buttonPress {
+    /* Pull the button upwards when hovered */
+    transform: translateY(-0.33em);
+}
+
+button:active .buttonPress {
+    /* Push the button downwards when pressed */
+    transform: translateY(0);
+}
+
+.button_top {
+    background-image: url(http://drive.google.com/uc?export=view&id=1Gi5W7DPhfaOtr_whpt3Fli8iYc4ejkZw);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.button_down {
+    background-image: url(http://drive.google.com/uc?export=view&id=1coTLZ9gdlIXRWWLwfblw5l8AYL_kxPub);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.button_left {
+    background-image: url(http://drive.google.com/uc?export=view&id=1ZclaFfcizQXq8BzIspEIBdedvSk-Y8UG);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.button_rigth {
+    background-image: url(http://drive.google.com/uc?export=view&id=1C2XMgZui9q0CgvAf5KhUlThuwWzm710Y);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+#up {
+    margin-left: 100%;
+    margin-right: 100%;
+}
+
+/* Botones */
+
+.messages {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 300px;
+    margin-top: 10%;
+}
+
+p {
+    display: block;
+    margin: 0 0;
+    width: 100%;
+}
+
+/*Redes Sociales*/
+.social-icons{
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin: 30px 0 auto;
+    padding: 0;
+}
+
+.social-icons li {
+    margin: 0 10px;
+}
+
+.social-icons li a {
+    font-size: 30px;
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: white;
+    position: relative;
+    transition: 0.5s ease;
+}
+
+.social-icons li a .github {
+    background-image: url(http://drive.google.com/uc?export=view&id=1yP_TnCQyx4R5rxGlUjbvbWZyKNTaJxX6);
+    width: 34px;
+    height: 34px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.social-icons li a .instagram{
+    background-image: url(http://drive.google.com/uc?export=view&id=1xR4YmHr-1PCW6G5GPmbDPZog-AiyP0sG);
+    width: 34px;
+    height: 34px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.social-icons li a .linkedin {
+    background-image: url(http://drive.google.com/uc?export=view&id=1oV31C9y3qy7U-lkwsAB8RtZqh5nWLWe-);
+    width: 34px;
+    height: 34px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.social-icons li a:hover {
+    background-image: rgba(2,228,231,0.8);
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    font-size: 40px;
+}
+
+.social-icons li a::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    background: rgba(2,228,231,0.8);
+    transform: scale(1);
+    transition: 0.5s ease-in-out;
+}
+
+.social-icons li a:hover::before {
+    transform: scale(0);
+}
+
+@media (max-width: 280px){
+    .messages {
+        margin-top: 22%;
+    }
+}
+
+@media (max-width: 440px) {
+    button {
+        margin-top: 10px;
+    }
+
+    .container {
+        width: 100%;
+    }
+
+    .messages{
+        padding-top: 8%;
+    }
+
+    .container h1 {
+        font-size: 15px;
+    }
+
+    .social-icons {
+        width: 200px;
+    }
+
+    .social-icons li {
+        padding: 0 5px;
+    }
+
+    .social-icons li a {
+        width: 30px;
+        height: 30px;
+    }
+
+    .social-icons li a::before {
+        width: 45px;
+        height: 45px;
+    }
+
+    #up {
+        margin-left: 100%;
+        margin-right: 100%;
+    }
+}
+
+
+

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FindTheBox</title>
+    <link rel="stylesheet" href="./styles.css">
+
+    <!--Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Rubik:wght@300;400;500&display=swap" rel="stylesheet">
+    <!--Fonts-->
+    
+
+</head>
+<body>
+    <div class="game-container">
+        <div class="container">
+            <h1>📦 FindTheBox 📦</h1>
+            <canvas id="game"></canvas>
+            <div class="messages">
+                <p>Lives: <span id="lives"></span></p>
+                <p>Time: 🕗<span id="time"></span> seg.</p>
+                <p>Record: <span id="score"></span></p>
+                <h3 id="result"></h3>
+            </div>
+            <ul class="social-icons">
+                <li>
+                    <a href="#"><i class="github"></i></a>
+                </li>
+                <li>
+                    <a href="#"><i class="instagram"></i></a>
+                </li>
+                <li>
+                    <a href="#"><i class="linkedin"></i></a>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="btns">
+            <button id="up"><span class="buttonPress button_top"></span>
+            </button>
+            <button id="left"><span class="buttonPress button_left"></span>
+            </button>
+            <button id="down"><span class="buttonPress button_down"></span>
+            </button>
+            <button id="right"><span class="buttonPress button_rigth"></span>
+            </button>
+        </div>
+    </div>
+    <script src="./maps.js"></script>
+    <script src="./index.js"></script>
+</body>
+</html>
