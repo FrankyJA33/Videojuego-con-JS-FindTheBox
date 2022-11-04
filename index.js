@@ -14,6 +14,8 @@ let canvasSize;
 let elementsSize;
 let level = 0;
 let lives = 3;
+let colicionX;
+let colicionY;
 
 let timeStart;
 let timePlayer;
@@ -98,8 +100,12 @@ function startGame() {
           x: elementsSize*(j+1),
           y: elementsSize*(i+1)
         });
-    }
-      game.fillText(emojis[mapCleanSplit[i][j]], elementsSize*(j+1), elementsSize*(i+1));
+      } 
+      if(colicionX == elementsSize*(j+1) && colicionY == elementsSize*(i+1)){
+        game.fillText(emojis['BOMB_COLLISION'], elementsSize*(j+1), elementsSize*(i+1));
+      } else {
+        game.fillText(emojis[mapCleanSplit[i][j]], elementsSize*(j+1), elementsSize*(i+1));
+      }
     }
   }
   spanScore.innerHTML = localStorage.getItem('record_Time') + ' seg.';
@@ -119,18 +125,25 @@ function movePlayer() {
   const enemyCollision = enemyPositions.find(enemy => {
     const enemyCollisionX = enemy.x == playerPosition.x;
     const enemyCollisionY = enemy.y == playerPosition.y;
+    
+    if(enemyCollisionX && enemyCollisionY){
+      colicionX = enemy.x;
+      colicionY = enemy.y;
+    }
+
     return enemyCollisionX && enemyCollisionY;
   });
   
   if (enemyCollision) {
     levelFail();
   }
-
   game.fillText(emojis['PLAYER'], playerPosition.x, playerPosition.y);
 }
 
 function levelWin() {
   level++;
+  colicionX = 0;
+  colicionY = 0;
   startGame();
 }
 
@@ -146,8 +159,10 @@ function levelFail() {
     level = 0;
     lives = 3;
     timeStart = false;
+    colicionX = 0;
+    colicionY = 0;
   }
-
+  
   playerPosition.x = undefined;
   playerPosition.y = undefined;
   startGame();
@@ -185,7 +200,7 @@ btnUp.addEventListener('click', Up);
 btnLeft.addEventListener('click', Left);
 btnRight.addEventListener('click', Right);
 btnDown.addEventListener('click', Down);
-btnRestart.addEventListener('click', () => location.reload());
+btnRestart.addEventListener('click', () => location.reload()); // Refresca la pagina
 
 function Up() {
   if (playerPosition.y > elementsSize) {
@@ -223,9 +238,7 @@ window.addEventListener('keydown', (event) => {
       break
     case 'ArrowRight': Right();
       break
-    case 'KeyR': location.reload();
+    case 'KeyR': location.reload(); //Refresca la pagina
       break
   }
 });
-
-// location.reload();
