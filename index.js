@@ -8,6 +8,7 @@ const spanLives = document.getElementById('lives');
 const spanTime = document.getElementById('time');
 const spanScore = document.getElementById('score');
 const spanResult = document.getElementById('result');
+const btnRestart = document.getElementById('restart');
 
 let canvasSize;
 let elementsSize;
@@ -172,6 +173,7 @@ function gameWin() {
       spanResult.innerHTML = 'Estuviste cerca de superar el record, sigue intentando 🏋️';
     }
   } else {
+    clearInterval(timeInterval);
     localStorage.setItem('record_Time', playerTimeNow);
     spanScore.innerHTML = localStorage.getItem('record_Time');
     spanResult.innerHTML = '📈 Has superado el record, FELICIDADES 🥇';
@@ -183,6 +185,7 @@ btnUp.addEventListener('click', Up);
 btnLeft.addEventListener('click', Left);
 btnRight.addEventListener('click', Right);
 btnDown.addEventListener('click', Down);
+btnRestart.addEventListener('click', () => location.reload());
 
 function Up() {
   if (playerPosition.y > elementsSize) {
@@ -210,6 +213,7 @@ function Down() {
 }
 
 window.addEventListener('keydown', (event) => {
+  //console.log(event.code);
   switch(event.code){
     case 'ArrowUp': Up();
       break
@@ -219,5 +223,9 @@ window.addEventListener('keydown', (event) => {
       break
     case 'ArrowRight': Right();
       break
+    case 'KeyR': location.reload();
+      break
   }
 });
+
+// location.reload();
